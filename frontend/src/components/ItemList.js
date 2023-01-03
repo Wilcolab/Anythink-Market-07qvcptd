@@ -1,5 +1,6 @@
 import ItemPreview from "./ItemPreview";
 import ListPagination from "./ListPagination";
+import placeholderImage from '../imgs/placeholder.png';
 import React from "react";
 
 const ItemList = (props) => {

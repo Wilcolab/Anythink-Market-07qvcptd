@@ -1,8 +1,16 @@
 import React from "react";
+import placeholderImage from '../imgs/placeholder.png';
 import { Link } from "react-router-dom";
 import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
+
+
+// const ItemPreview = ({ url }) => {
+//   return (
+//     <img src={url || placeholderImage} alt="item preview" />
+//   );
+// };
 
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
@@ -37,7 +45,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image}
+        src={item.image || placeholderImage}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
@@ -64,3 +72,4 @@ const ItemPreview = (props) => {
 };
 
 export default connect(() => ({}), mapDispatchToProps)(ItemPreview);
+
