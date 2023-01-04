@@ -17,6 +17,8 @@ var ItemSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+var placeholder = '../imgs/placeholder.png';
+
 ItemSchema.plugin(uniqueValidator, { message: "is already taken" });
 
 ItemSchema.pre("validate", function(next) {
@@ -49,7 +51,7 @@ ItemSchema.methods.toJSONFor = function(user) {
     slug: this.slug,
     title: this.title,
     description: this.description,
-    image: this.image,
+    image: this.image || placeholder,
     createdAt: this.createdAt,
     updatedAt: this.updatedAt,
     tagList: this.tagList,
